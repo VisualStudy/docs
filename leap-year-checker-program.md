@@ -20,9 +20,9 @@ int main() {
     scanf("%d", &year);
 
     if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
-        printf("\n %d년은 윤년이 맞다.", year);
+        printf("\n %d년은 윤년입니다.", year);
     else
-        printf("\n %d년은 윤년이 아니다.", year);
+        printf("\n %d년은 윤년이 아닙니다.", year);
 
     return 0;
 }
