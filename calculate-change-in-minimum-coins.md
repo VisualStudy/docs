@@ -48,7 +48,7 @@ int main() {
         printf("\n 오백원권 = %d장", c500);
         printf("\n 백원권 = %d장", c100);
     } else {
-        printf("\n 지불금액이 물건 값보다 작아서 결제 불가!!!!!");
+        printf("\n 지불금액이 물건 값보다 작아서 결제 불가합니다.");
     }
 
     return 0;
