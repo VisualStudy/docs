@@ -58,6 +58,15 @@ int main()
 }
 ```
 
+만약에 삼항 연산자를 이용하여 코드를 작성하면 다음과 같이 할 수 있습니다.
+
+```c
+int max(int a, int b, int c)
+{
+    return (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+}
+```
+
 ### 코드 설명
 
 1. **`#define _CRT_SECURE_NO_WARNINGS`**:
