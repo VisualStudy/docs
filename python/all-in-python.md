@@ -338,3 +338,328 @@ def add(a, b):
 ```
 
 이러한 방법을 통해 파이썬에서 주석을 효과적으로 사용하면, 코드의 가독성을 높이고 유지보수를 용이하게 할 수 있습니다. 주석은 코드 작성자의 의도를 명확하게 전달하는 중요한 도구임을 기억하세요.
+
+# 파이썬 Docstring: 코드 문서화를 위한 필수 도구
+
+Docstring(문서 문자열)은 파이썬 코드에서 함수, 클래스, 모듈에 대한 설명을 제공하는 중요한 도구입니다. Docstring을 잘 활용하면 코드의 가독성과 유지보수성을 크게 향상시킬 수 있습니다. 이번 글에서는 Docstring의 작성 방법과 모범 사례에 대해 자세히 설명하겠습니다.
+
+## 1. Docstring이란?
+
+Docstring은 파이썬의 함수, 클래스, 모듈의 설명을 위해 사용되는 문자열입니다. 일반 주석과 달리 Docstring은 실제 코드의 일부로 간주되며, 런타임에도 접근할 수 있습니다. 이를 통해 코드를 문서화하고, IDE나 도구를 통해 쉽게 문서화를 자동화할 수 있습니다.
+
+## 2. Docstring 작성 방법
+
+Docstring은 여러 줄 문자열(`"""` 또는 `'''`)을 사용하여 작성됩니다. 단일 줄 문자열(`' '` 또는 `" "`)도 사용 가능하지만, 여러 줄 설명이 필요한 경우 주로 여러 줄 문자열을 사용합니다.
+
+### 2.1 함수의 Docstring
+
+함수의 Docstring은 함수 정의 바로 아래에 위치합니다. 함수의 역할, 매개변수, 반환값 등을 설명합니다.
+
+```python
+def add(a, b):
+    """
+    두 수를 더하여 반환합니다.
+
+    매개변수:
+    a (int, float): 첫 번째 숫자
+    b (int, float): 두 번째 숫자
+
+    반환값:
+    int, float: 입력된 두 수의 합
+    """
+    return a + b
+```
+
+### 2.2 클래스의 Docstring
+
+클래스의 Docstring은 클래스 정의 바로 아래에 위치합니다. 클래스의 역할과 주요 메서드에 대해 설명합니다.
+
+```python
+class Dog:
+    """
+    개를 나타내는 클래스.
+
+    속성:
+    name (str): 개의 이름
+    age (int): 개의 나이
+    """
+
+    def __init__(self, name, age):
+        """
+        Dog 클래스의 생성자.
+
+        매개변수:
+        name (str): 개의 이름
+        age (int): 개의 나이
+        """
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        """
+        개가 짖는 동작을 수행합니다.
+
+        반환값:
+        str: 짖는 소리
+        """
+        return "Woof!"
+```
+
+### 2.3 모듈의 Docstring
+
+모듈의 Docstring은 파일의 최상단에 위치합니다. 모듈 전체의 목적과 주요 기능을 설명합니다.
+
+```python
+"""
+이 모듈은 간단한 산술 연산을 수행하는 함수들을 제공합니다.
+
+함수들:
+- add(a, b): 두 수의 합을 반환합니다.
+- subtract(a, b): 두 수의 차를 반환합니다.
+- multiply(a, b): 두 수의 곱을 반환합니다.
+- divide(a, b): 두 수의 나눗셈 결과를 반환합니다.
+"""
+```
+
+## 3. Docstring 모범 사례
+
+### 3.1 명확하고 간결하게 작성
+
+Docstring은 명확하고 간결하게 작성되어야 합니다. 함수, 클래스, 모듈의 주요 목적과 사용 방법을 쉽게 이해할 수 있도록 합니다.
+
+### 3.2 표준 형식 사용
+
+PEP 257은 파이썬 Docstring 작성에 대한 표준을 제시합니다. 일관된 형식을 사용하면, 코드의 가독성과 유지보수성이 향상됩니다.
+
+#### 예: PEP 257 형식의 함수 Docstring
+
+```python
+def add(a, b):
+    """
+    두 수를 더하여 반환합니다.
+
+    Args:
+        a (int, float): 첫 번째 숫자
+        b (int, float): 두 번째 숫자
+
+    Returns:
+        int, float: 입력된 두 수의 합
+    """
+    return a + b
+```
+
+### 3.3 자동 문서화 도구 사용
+
+Docstring을 활용하여 자동으로 문서화를 생성할 수 있는 도구들이 있습니다. 예를 들어, Sphinx는 Docstring을 기반으로 HTML, PDF 등의 문서를 생성하는 도구입니다.
+
+#### Sphinx 설치 및 사용 예
+
+1. Sphinx 설치:
+   ```bash
+   pip install sphinx
+   ```
+
+2. Sphinx 초기화:
+   ```bash
+   sphinx-quickstart
+   ```
+
+3. 코드에 Docstring 작성 후, Sphinx 설정 파일(`conf.py`)을 수정하여 자동 문서화를 설정합니다.
+
+4. 문서 생성:
+   ```bash
+   make html
+   ```
+
+## 4. Docstring 활용 예
+
+다양한 예시를 통해 Docstring의 활용 방법을 구체적으로 살펴봅시다.
+
+### 4.1 함수의 Docstring
+
+```python
+def factorial(n):
+    """
+    주어진 수의 팩토리얼을 계산합니다.
+
+    Args:
+        n (int): 팩토리얼을 계산할 정수
+
+    Returns:
+        int: 입력된 정수의 팩토리얼 값
+
+    Raises:
+        ValueError: n이 음수인 경우 예외 발생
+    """
+    if n < 0:
+        raise ValueError("음수는 팩토리얼을 계산할 수 없습니다.")
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+```
+
+### 4.2 클래스의 Docstring
+
+```python
+class Circle:
+    """
+    원을 나타내는 클래스.
+
+    속성:
+        radius (float): 원의 반지름
+    """
+
+    def __init__(self, radius):
+        """
+        Circle 클래스의 생성자.
+
+        Args:
+            radius (float): 원의 반지름
+        """
+        self.radius = radius
+
+    def area(self):
+        """
+        원의 넓이를 계산합니다.
+
+        Returns:
+            float: 원의 넓이
+        """
+        import math
+        return math.pi * self.radius ** 2
+
+    def circumference(self):
+        """
+        원의 둘레를 계산합니다.
+
+        Returns:
+            float: 원의 둘레
+        """
+        import math
+        return 2 * math.pi * self.radius
+```
+
+## 5. Docstring과 주석의 차이점
+
+Docstring과 일반 주석은 목적이 다릅니다. 주석은 코드의 특정 부분을 설명하기 위해 사용되며, Docstring은 함수, 클래스, 모듈 전체의 설명을 제공합니다. Docstring은 런타임에도 접근 가능하며, 자동 문서화 도구를 통해 활용할 수 있습니다.
+
+## 결론
+
+Docstring은 파이썬 코드의 가독성과 유지보수성을 높이는 강력한 도구입니다. PEP 257과 같은 표준을 따라 일관성 있게 작성하고, 자동 문서화 도구를 활용하면, 더욱 효율적인 코드 관리를 할 수 있습니다. Docstring을 잘 활용하여, 더 나은 파이썬 코드를 작성해 보세요!
+
+# PEP 257: 파이썬 문서화 문자열(Documentation String, Docstring) 규약
+
+PEP 257(파이썬 개선 제안서 257)은 파이썬에서 문서화 문자열(Docstring)을 작성하는 방법에 대한 규약을 정의한 문서입니다. PEP 257은 Docstring의 작성 형식과 스타일 가이드라인을 제공하여 코드의 가독성과 일관성을 높이고, 자동화 도구를 통한 문서 생성을 용이하게 합니다.
+
+## PEP 257의 주요 내용
+
+### 1. 단일 줄 Docstring
+
+단일 줄 Docstring은 함수, 메서드, 클래스 또는 모듈의 기능을 간단히 설명하는 데 사용됩니다. 단일 줄 Docstring은 한 줄로 작성되고, 닫는 따옴표(`"""`)는 같은 줄에 위치합니다.
+
+```python
+def add(a, b):
+    """두 수를 더하여 반환합니다."""
+    return a + b
+```
+
+### 2. 여러 줄 Docstring
+
+여러 줄 Docstring은 더 긴 설명이 필요한 경우 사용됩니다. 첫 번째 줄은 간단한 요약을 제공하고, 빈 줄로 구분한 후 추가 설명이나 사용 예제를 작성합니다. 닫는 따옴표(`"""`)는 새로운 줄에 위치합니다.
+
+```python
+def subtract(a, b):
+    """
+    두 수의 차를 계산하여 반환합니다.
+
+    매개변수:
+        a (int, float): 첫 번째 숫자
+        b (int, float): 두 번째 숫자
+
+    반환값:
+        int, float: 두 수의 차
+    """
+    return a - b
+```
+
+### 3. 모듈과 패키지의 Docstring
+
+모듈의 Docstring은 모듈 파일의 최상단에 위치하며, 모듈의 목적과 주요 기능을 설명합니다. 패키지의 Docstring은 `__init__.py` 파일에 작성됩니다.
+
+```python
+"""
+이 모듈은 기본적인 산술 연산 함수를 제공합니다.
+
+함수:
+- add(a, b): 두 수의 합을 반환합니다.
+- subtract(a, b): 두 수의 차를 반환합니다.
+- multiply(a, b): 두 수의 곱을 반환합니다.
+- divide(a, b): 두 수의 나눗셈 결과를 반환합니다.
+"""
+```
+
+### 4. 클래스와 메서드의 Docstring
+
+클래스의 Docstring은 클래스 정의 바로 아래에 위치하며, 클래스의 목적과 주요 속성을 설명합니다. 메서드의 Docstring은 메서드 정의 바로 아래에 위치하며, 메서드의 동작과 매개변수, 반환값 등을 설명합니다.
+
+```python
+class Calculator:
+    """
+    간단한 계산기 클래스.
+
+    메서드:
+        add(a, b): 두 수의 합을 반환합니다.
+        subtract(a, b): 두 수의 차를 반환합니다.
+        multiply(a, b): 두 수의 곱을 반환합니다.
+        divide(a, b): 두 수의 나눗셈 결과를 반환합니다.
+    """
+
+    def add(self, a, b):
+        """두 수의 합을 반환합니다."""
+        return a + b
+
+    def subtract(self, a, b):
+        """두 수의 차를 반환합니다."""
+        return a - b
+
+    def multiply(self, a, b):
+        """두 수의 곱을 반환합니다."""
+        return a * b
+
+    def divide(self, a, b):
+        """
+        두 수의 나눗셈 결과를 반환합니다.
+
+        매개변수:
+            a (int, float): 피제수
+            b (int, float): 제수
+
+        반환값:
+            float: 나눗셈 결과
+        """
+        if b == 0:
+            raise ValueError("0으로 나눌 수 없습니다.")
+        return a / b
+```
+
+### 5. Docstring의 내용과 형식
+
+PEP 257은 Docstring 작성 시 다음과 같은 형식을 따를 것을 권장합니다.
+
+- **요약**: 첫 번째 줄에 간결한 요약을 작성합니다.
+- **빈 줄**: 요약 뒤에 빈 줄을 추가하여 요약과 상세 설명을 구분합니다.
+- **상세 설명**: 추가 설명이 필요한 경우, 요약 뒤에 상세 설명을 작성합니다.
+- **매개변수와 반환값**: 함수나 메서드의 경우, 매개변수와 반환값을 명확하게 설명합니다.
+
+### 6. 자동화 도구와의 연계
+
+PEP 257 규약을 따르면, Sphinx와 같은 자동화 도구를 사용하여 Docstring을 기반으로 쉽게 문서를 생성할 수 있습니다. Sphinx는 Docstring을 파싱하여 HTML, PDF 등 다양한 형식의 문서를 자동으로 생성합니다.
+
+## 결론
+
+PEP 257은 파이썬에서 일관되고 가독성 높은 Docstring을 작성하기 위한 규약을 제시합니다. 이를 따름으로써 코드의 이해도와 유지보수성을 크게 향상시킬 수 있으며, 자동화 도구를 통해 문서화를 손쉽게 처리할 수 있습니다. Docstring을 잘 작성하여, 더욱 효과적인 파이썬 프로그래밍을 경험해 보세요!
+
+## Docstring과 PEP257 관련 내용은 지금 당장 중요하진 않으니 건너뛰고 나중에 봐도 무방합니다.
