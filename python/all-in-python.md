@@ -1083,3 +1083,197 @@ print(type(b))  # <class 'complex'> 출력
 ## 결론
 
 파이썬의 숫자형 자료형인 정수형, 부동소수점형, 복소수형에 대해 알아보았습니다. 각 자료형은 고유한 특징과 용도를 가지며, 다양한 수학적 연산을 지원합니다. 숫자형 자료형에 대한 이해는 파이썬 프로그래밍의 기초를 다지는 데 매우 중요합니다. 이를 통해 더욱 효율적이고 정확한 수학적 계산을 수행할 수 있습니다.
+
+# 파이썬의 문자열: 기초부터 심화까지
+
+파이썬에서 문자열은 가장 많이 사용되는 자료형 중 하나입니다. 문자열은 문자들의 집합으로, 다양한 방법으로 조작하고 처리할 수 있습니다. 이번 글에서는 파이썬 문자열의 기초부터 심화까지 자세히 설명하겠습니다.
+
+## 1. 문자열 선언과 사용
+
+파이썬에서 문자열은 작은따옴표(`'`)나 큰따옴표(`"`)로 감싸서 선언할 수 있습니다.
+
+```python
+# 문자열 선언
+string1 = 'Hello, World!'
+string2 = "Python is awesome!"
+
+print(string1)  # Hello, World! 출력
+print(string2)  # Python is awesome! 출력
+```
+
+여러 줄 문자열은 삼중 따옴표(`'''` 또는 `"""`)를 사용하여 선언할 수 있습니다.
+
+```python
+multiline_string = """This is a
+multiline string."""
+print(multiline_string)
+```
+
+## 2. 문자열 인덱싱과 슬라이싱
+
+### 2.1 인덱싱
+
+문자열의 각 문자에 접근하기 위해 인덱싱을 사용할 수 있습니다. 인덱스는 0부터 시작합니다.
+
+```python
+string = "Hello, World!"
+
+print(string[0])  # 'H' 출력
+print(string[7])  # 'W' 출력
+print(string[-1])  # '!' 출력 (음수 인덱스는 뒤에서부터 접근)
+```
+
+### 2.2 슬라이싱
+
+슬라이싱은 문자열의 부분 문자열(substring)을 추출하는 데 사용됩니다.
+
+```python
+string = "Hello, World!"
+
+print(string[0:5])  # 'Hello' 출력 (0번 인덱스부터 4번 인덱스까지)
+print(string[:5])  # 'Hello' 출력 (시작 인덱스를 생략하면 0부터 시작)
+print(string[7:])  # 'World!' 출력 (끝 인덱스를 생략하면 문자열 끝까지)
+print(string[::2])  # 'Hlo ol!' 출력 (2칸씩 건너뛰며 추출)
+```
+
+## 3. 문자열 연산
+
+### 3.1 문자열 연결 (Concatenation)
+
+문자열을 덧셈 연산자로 연결할 수 있습니다.
+
+```python
+string1 = "Hello"
+string2 = "World"
+combined_string = string1 + ", " + string2 + "!"
+print(combined_string)  # 'Hello, World!' 출력
+```
+
+### 3.2 문자열 반복 (Repetition)
+
+문자열을 곱셈 연산자로 반복할 수 있습니다.
+
+```python
+string = "Hello"
+repeated_string = string * 3
+print(repeated_string)  # 'HelloHelloHello' 출력
+```
+
+### 3.3 문자열 포함 여부 확인
+
+문자열이 다른 문자열에 포함되어 있는지 확인할 수 있습니다.
+
+```python
+string = "Hello, World!"
+print("Hello" in string)  # True 출력
+print("Python" in string)  # False 출력
+```
+
+## 4. 문자열 메서드
+
+파이썬은 문자열을 다루기 위한 다양한 내장 메서드를 제공합니다.
+
+### 4.1 대소문자 변환
+
+```python
+string = "Hello, World!"
+print(string.upper())  # 'HELLO, WORLD!' 출력
+print(string.lower())  # 'hello, world!' 출력
+print(string.capitalize())  # 'Hello, world!' 출력
+print(string.title())  # 'Hello, World!' 출력
+```
+
+### 4.2 공백 제거
+
+```python
+string = "   Hello, World!   "
+print(string.strip())  # 'Hello, World!' 출력 (양쪽 공백 제거)
+print(string.lstrip())  # 'Hello, World!   ' 출력 (왼쪽 공백 제거)
+print(string.rstrip())  # '   Hello, World!' 출력 (오른쪽 공백 제거)
+```
+
+### 4.3 문자열 분할과 결합
+
+```python
+string = "apple,banana,cherry"
+fruits = string.split(",")
+print(fruits)  # ['apple', 'banana', 'cherry'] 출력
+
+joined_string = "-".join(fruits)
+print(joined_string)  # 'apple-banana-cherry' 출력
+```
+
+### 4.4 문자열 검색과 대체
+
+```python
+string = "Hello, World!"
+print(string.find("World"))  # 7 출력 (문자열 'World'의 시작 인덱스)
+print(string.replace("World", "Python"))  # 'Hello, Python!' 출력
+```
+
+## 5. 포맷팅
+
+파이썬은 문자열 내에 변수의 값을 삽입하기 위한 여러 방법을 제공합니다.
+
+### 5.1 % 연산자
+
+```python
+name = "Alice"
+age = 25
+formatted_string = "My name is %s and I am %d years old." % (name, age)
+print(formatted_string)  # 'My name is Alice and I am 25 years old.' 출력
+```
+
+### 5.2 str.format() 메서드
+
+```python
+name = "Alice"
+age = 25
+formatted_string = "My name is {} and I am {} years old.".format(name, age)
+print(formatted_string)  # 'My name is Alice and I am 25 years old.' 출력
+```
+
+### 5.3 f-문자열 (파이썬 3.6+)
+
+```python
+name = "Alice"
+age = 25
+formatted_string = f"My name is {name} and I am {age} years old."
+print(formatted_string)  # 'My name is Alice and I am 25 years old.' 출력
+```
+
+## 6. 이스케이프 시퀀스
+
+이스케이프 시퀀스를 사용하여 문자열 내에서 특별한 문자를 표현할 수 있습니다.
+
+```python
+string = "Hello\nWorld!"  # 개행 문자
+print(string)
+# Hello
+# World! 출력
+
+string = "He said, \"Hello, World!\""  # 따옴표 문자
+print(string)  # He said, "Hello, World!" 출력
+
+string = "Path\\to\\file"  # 백슬래시 문자
+print(string)  # Path\to\file 출력
+```
+
+## 7. 문자열과 인코딩
+
+파이썬은 유니코드 문자열을 기본으로 사용합니다. 문자열을 바이트로 변환하거나, 바이트를 문자열로 변환할 수 있습니다.
+
+```python
+# 문자열을 바이트로 인코딩
+string = "Hello, World!"
+encoded_string = string.encode("utf-8")
+print(encoded_string)  # b'Hello, World!' 출력
+
+# 바이트를 문자열로 디코딩
+decoded_string = encoded_string.decode("utf-8")
+print(decoded_string)  # 'Hello, World!' 출력
+```
+
+## 결론
+
+파이썬의 문자열은 다양한 기능과 유연성을 제공하여 텍스트 데이터를 쉽게 처리하고 조작할 수 있게 합니다. 문자열 선언, 인덱싱, 슬라이싱, 연산, 메서드, 포맷팅, 이스케이프 시퀀스, 인코딩 등 문자열과 관련된 다양한 주제를 숙지함으로써 더욱 강력하고 효율적인 파이썬 프로그래밍을 할 수 있습니다.
