@@ -663,3 +663,209 @@ PEP 257 규약을 따르면, Sphinx와 같은 자동화 도구를 사용하여 D
 PEP 257은 파이썬에서 일관되고 가독성 높은 Docstring을 작성하기 위한 규약을 제시합니다. 이를 따름으로써 코드의 이해도와 유지보수성을 크게 향상시킬 수 있으며, 자동화 도구를 통해 문서화를 손쉽게 처리할 수 있습니다. Docstring을 잘 작성하여, 더욱 효과적인 파이썬 프로그래밍을 경험해 보세요!
 
 ## Docstring과 PEP257 관련 내용은 지금 당장 중요하진 않으니 건너뛰고 나중에 봐도 무방합니다.
+
+# 파이썬의 변수와 자료형: 기초부터 심화까지
+
+파이썬을 배우기 위해서는 변수와 자료형에 대한 이해가 필수적입니다. 이번 글에서는 파이썬의 변수 선언 방법과 다양한 자료형에 대해 자세히 설명하겠습니다. 이를 통해 파이썬 프로그래밍의 기초를 탄탄히 다질 수 있습니다.
+
+## 1. 변수란 무엇인가?
+
+변수는 값을 저장할 수 있는 메모리 공간의 이름입니다. 파이썬에서 변수를 선언하고 값을 할당하는 방법은 매우 간단합니다. 변수는 특정 자료형에 구애받지 않고 다양한 값을 가질 수 있습니다.
+
+### 1.1 변수 선언과 값 할당
+
+파이썬에서는 변수를 선언할 때 자료형을 명시하지 않습니다. 값을 할당하면 파이썬이 자동으로 자료형을 결정합니다.
+
+```python
+# 변수 선언 및 값 할당
+x = 10
+y = 3.14
+name = "Alice"
+is_student = True
+
+print(x)  # 10 출력
+print(y)  # 3.14 출력
+print(name)  # Alice 출력
+print(is_student)  # True 출력
+```
+
+## 2. 자료형
+
+파이썬에서는 다양한 자료형을 지원합니다. 주요 자료형으로는 숫자형, 문자열, 불리언, 리스트, 튜플, 세트, 딕셔너리가 있습니다.
+
+### 2.1 숫자형
+
+숫자형은 정수형(`int`)과 부동소수점형(`float`)으로 나눌 수 있습니다.
+
+#### 2.1.1 정수형 (int)
+
+정수형은 소수점이 없는 숫자를 나타냅니다.
+
+```python
+a = 10
+b = -5
+print(type(a))  # <class 'int'> 출력
+print(type(b))  # <class 'int'> 출력
+```
+
+#### 2.1.2 부동소수점형 (float)
+
+부동소수점형은 소수점을 포함한 숫자를 나타냅니다.
+
+```python
+c = 3.14
+d = -2.7
+print(type(c))  # <class 'float'> 출력
+print(type(d))  # <class 'float'> 출력
+```
+
+#### 2.1.3 복소수형 (complex)
+
+파이썬에서는 복소수형도 지원합니다. 복소수는 실수부와 허수부로 구성됩니다.
+
+```python
+e = 2 + 3j
+print(type(e))  # <class 'complex'> 출력
+print(e.real)  # 2.0 출력
+print(e.imag)  # 3.0 출력
+```
+
+### 2.2 문자열 (str)
+
+문자열은 문자들의 집합으로, 작은따옴표(`'`) 또는 큰따옴표(`"`)로 감싸서 표현합니다.
+
+```python
+greeting = "Hello, World!"
+name = 'Alice'
+print(type(greeting))  # <class 'str'> 출력
+print(type(name))  # <class 'str'> 출력
+```
+
+#### 2.2.1 문자열 연산
+
+문자열은 덧셈 연산을 통해 연결(concatenation)할 수 있고, 곱셈 연산을 통해 반복(repetition)할 수 있습니다.
+
+```python
+full_greeting = greeting + " " + name
+print(full_greeting)  # Hello, World! Alice 출력
+
+repeated_name = name * 3
+print(repeated_name)  # AliceAliceAlice 출력
+```
+
+### 2.3 불리언 (bool)
+
+불리언은 참(`True`) 또는 거짓(`False`)을 나타내는 자료형입니다.
+
+```python
+is_day = True
+is_night = False
+print(type(is_day))  # <class 'bool'> 출력
+print(type(is_night))  # <class 'bool'> 출력
+```
+
+### 2.4 리스트 (list)
+
+리스트는 여러 값을 순서대로 저장할 수 있는 가변 길이의 배열입니다. 대괄호(`[]`)로 감싸서 표현하며, 각 값은 콤마(`,`)로 구분합니다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+fruits = ["apple", "banana", "cherry"]
+print(type(numbers))  # <class 'list'> 출력
+print(type(fruits))  # <class 'list'> 출력
+```
+
+#### 2.4.1 리스트 연산
+
+리스트는 덧셈 연산을 통해 연결할 수 있고, 곱셈 연산을 통해 반복할 수 있습니다.
+
+```python
+combined_list = numbers + fruits
+print(combined_list)  # [1, 2, 3, 4, 5, 'apple', 'banana', 'cherry'] 출력
+
+repeated_numbers = numbers * 2
+print(repeated_numbers)  # [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] 출력
+```
+
+### 2.5 튜플 (tuple)
+
+튜플은 리스트와 비슷하지만, 불변(immutable)입니다. 즉, 값을 변경할 수 없습니다. 소괄호(`()`)로 감싸서 표현합니다.
+
+```python
+point = (2, 3)
+print(type(point))  # <class 'tuple'> 출력
+
+# 튜플의 요소에 접근
+print(point[0])  # 2 출력
+print(point[1])  # 3 출력
+```
+
+### 2.6 세트 (set)
+
+세트는 고유한 값들의 모임으로, 순서가 없고 중복을 허용하지 않습니다. 중괄호(`{}`)로 감싸서 표현합니다.
+
+```python
+unique_numbers = {1, 2, 3, 4, 5}
+print(type(unique_numbers))  # <class 'set'> 출력
+
+# 세트에 값 추가
+unique_numbers.add(6)
+print(unique_numbers)  # {1, 2, 3, 4, 5, 6} 출력
+
+# 중복 값 추가 시도
+unique_numbers.add(3)
+print(unique_numbers)  # {1, 2, 3, 4, 5, 6} 출력 (변화 없음)
+```
+
+### 2.7 딕셔너리 (dictionary)
+
+딕셔너리는 키-값 쌍의 모음으로, 순서가 없으며 키는 고유해야 합니다. 중괄호(`{}`)로 감싸고, 콜론(`:`)을 사용하여 키와 값을 구분합니다.
+
+```python
+student = {
+    "name": "Alice",
+    "age": 21,
+    "major": "Computer Science"
+}
+print(type(student))  # <class 'dict'> 출력
+
+# 딕셔너리 값에 접근
+print(student["name"])  # Alice 출력
+print(student["age"])  # 21 출력
+```
+
+## 3. 형 변환
+
+파이썬에서는 변수의 자료형을 다른 자료형으로 변환할 수 있는 다양한 방법을 제공합니다.
+
+### 3.1 암시적 형 변환
+
+파이썬은 필요에 따라 자동으로 형 변환을 수행합니다. 이를 암시적 형 변환이라고 합니다.
+
+```python
+x = 10
+y = 3.14
+z = x + y
+print(z)  # 13.14 출력
+print(type(z))  # <class 'float'> 출력
+```
+
+### 3.2 명시적 형 변환
+
+명시적 형 변환은 프로그래머가 직접 형 변환을 명시하는 것입니다. 주로 `int()`, `float()`, `str()` 등의 함수를 사용합니다.
+
+```python
+a = "123"
+b = int(a)
+print(b)  # 123 출력
+print(type(b))  # <class 'int'> 출력
+
+c = 3.14
+d = str(c)
+print(d)  # '3.14' 출력
+print(type(d))  # <class 'str'> 출력
+```
+
+## 결론
+
+파이썬의 변수와 자료형에 대한 이해는 프로그래밍의 기초를 다지는 데 매우 중요합니다. 변수 선언과 값 할당, 다양한 자료형의 특징과 사용 방법을 숙지함으로써, 파이썬 프로그래밍에서 강력하고 유연한 코드를 작성할 수 있습니다. 이번 글을 통해 파이썬의 변수와 자료형에 대한 기본적인 이해를 높이고, 더 나은 코드를 작성해 보세요.
