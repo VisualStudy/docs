@@ -1418,3 +1418,201 @@ print(bool(b))  # True 출력
 ## 결론
 
 파이썬의 불리언 자료형은 프로그래밍에서 논리적 흐름을 제어하는 데 필수적인 역할을 합니다. 불리언 값, 논리 연산자, 비교 연산자, 조건문, 반복문 등 다양한 상황에서 불리언 자료형을 효과적으로 사용할 수 있습니다. 불리언 자료형에 대한 이해를 통해 더욱 효율적이고 논리적인 파이썬 코드를 작성해 보세요.
+
+# 파이썬의 리스트: 기초부터 심화까지
+
+파이썬의 리스트(List)는 데이터를 순차적으로 저장하는 데 사용되는 매우 유용한 자료형입니다. 리스트는 다른 프로그래밍 언어의 배열과 유사하지만, 더 다양한 기능을 제공합니다. 이번 글에서는 파이썬의 리스트에 대해 기초부터 심화까지 자세히 설명하겠습니다.
+
+## 1. 리스트 선언과 사용
+
+리스트는 대괄호(`[]`)를 사용하여 선언하며, 쉼표로 구분된 여러 요소를 포함할 수 있습니다.
+
+```python
+# 빈 리스트 선언
+empty_list = []
+
+# 여러 요소를 가진 리스트 선언
+numbers = [1, 2, 3, 4, 5]
+fruits = ["apple", "banana", "cherry"]
+
+print(numbers)  # [1, 2, 3, 4, 5] 출력
+print(fruits)  # ['apple', 'banana', 'cherry'] 출력
+```
+
+리스트는 다양한 자료형을 혼합하여 가질 수 있습니다.
+
+```python
+mixed_list = [1, "apple", 3.14, True]
+print(mixed_list)  # [1, 'apple', 3.14, True] 출력
+```
+
+## 2. 리스트 인덱싱과 슬라이싱
+
+### 2.1 인덱싱
+
+리스트의 각 요소에 접근하기 위해 인덱싱을 사용할 수 있습니다. 인덱스는 0부터 시작합니다.
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+print(fruits[0])  # 'apple' 출력
+print(fruits[2])  # 'cherry' 출력
+print(fruits[-1])  # 'cherry' 출력 (음수 인덱스는 뒤에서부터 접근)
+```
+
+### 2.2 슬라이싱
+
+슬라이싱은 리스트의 부분 리스트(sublist)를 추출하는 데 사용됩니다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+print(numbers[1:4])  # [2, 3, 4] 출력 (1번 인덱스부터 3번 인덱스까지)
+print(numbers[:3])  # [1, 2, 3] 출력 (시작 인덱스를 생략하면 0부터 시작)
+print(numbers[2:])  # [3, 4, 5] 출력 (끝 인덱스를 생략하면 리스트 끝까지)
+print(numbers[::2])  # [1, 3, 5] 출력 (2칸씩 건너뛰며 추출)
+```
+
+## 3. 리스트 연산
+
+### 3.1 리스트 연결 (Concatenation)
+
+리스트를 덧셈 연산자로 연결할 수 있습니다.
+
+```python
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined_list = list1 + list2
+print(combined_list)  # [1, 2, 3, 4, 5, 6] 출력
+```
+
+### 3.2 리스트 반복 (Repetition)
+
+리스트를 곱셈 연산자로 반복할 수 있습니다.
+
+```python
+numbers = [1, 2, 3]
+repeated_list = numbers * 3
+print(repeated_list)  # [1, 2, 3, 1, 2, 3, 1, 2, 3] 출력
+```
+
+## 4. 리스트 메서드
+
+파이썬은 리스트를 다루기 위한 다양한 내장 메서드를 제공합니다.
+
+### 4.1 요소 추가
+
+`append()` 메서드는 리스트의 끝에 요소를 추가합니다.
+
+```python
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)  # ['apple', 'banana', 'cherry'] 출력
+```
+
+`insert()` 메서드는 지정된 위치에 요소를 추가합니다.
+
+```python
+numbers = [1, 2, 4, 5]
+numbers.insert(2, 3)  # 2번 인덱스에 3을 추가
+print(numbers)  # [1, 2, 3, 4, 5] 출력
+```
+
+### 4.2 요소 제거
+
+`remove()` 메서드는 지정된 값을 가진 첫 번째 요소를 제거합니다.
+
+```python
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+print(fruits)  # ['apple', 'cherry'] 출력
+```
+
+`pop()` 메서드는 지정된 인덱스의 요소를 제거하고 반환합니다. 인덱스를 지정하지 않으면 마지막 요소를 제거합니다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+last_element = numbers.pop()
+print(last_element)  # 5 출력
+print(numbers)  # [1, 2, 3, 4] 출력
+```
+
+### 4.3 리스트 정렬
+
+`sort()` 메서드는 리스트를 오름차순으로 정렬합니다. `reverse=True` 인자를 사용하여 내림차순으로 정렬할 수 있습니다.
+
+```python
+numbers = [4, 2, 3, 1, 5]
+numbers.sort()
+print(numbers)  # [1, 2, 3, 4, 5] 출력
+
+numbers.sort(reverse=True)
+print(numbers)  # [5, 4, 3, 2, 1] 출력
+```
+
+`sorted()` 함수는 원본 리스트를 변경하지 않고 정렬된 새로운 리스트를 반환합니다.
+
+```python
+numbers = [4, 2, 3, 1, 5]
+sorted_numbers = sorted(numbers)
+print(sorted_numbers)  # [1, 2, 3, 4, 5] 출력
+print(numbers)  # [4, 2, 3, 1, 5] 출력 (원본 리스트는 변경되지 않음)
+```
+
+### 4.4 리스트 뒤집기
+
+`reverse()` 메서드는 리스트의 요소 순서를 반대로 뒤집습니다.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+numbers.reverse()
+print(numbers)  # [5, 4, 3, 2, 1] 출력
+```
+
+## 5. 리스트와 반복문
+
+리스트는 반복문과 함께 자주 사용됩니다. `for` 문을 사용하여 리스트의 각 요소에 접근할 수 있습니다.
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+# apple 출력
+# banana 출력
+# cherry 출력
+```
+
+## 6. 리스트 컴프리헨션
+
+리스트 컴프리헨션(List Comprehension)은 리스트를 간결하게 생성하는 방법입니다. 기존 리스트를 기반으로 새로운 리스트를 만들 때 유용합니다.
+
+```python
+# 0부터 9까지의 제곱수를 포함하는 리스트 생성
+squares = [x**2 for x in range(10)]
+print(squares)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81] 출력
+
+# 리스트에서 짝수만 포함하는 리스트 생성
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evens = [x for x in numbers if x % 2 == 0]
+print(evens)  # [2, 4, 6, 8, 10] 출력
+```
+
+## 7. 중첩 리스트
+
+리스트는 다른 리스트를 요소로 가질 수 있습니다. 이를 통해 2차원 이상의 다차원 리스트를 만들 수 있습니다.
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrix[0])  # [1, 2, 3] 출력
+print(matrix[1][1])  # 5 출력
+```
+
+## 결론
+
+파이썬의 리스트는 다양한 기능과 유연성을 제공하여 데이터를 저장하고 조작하는 데 매우 유용한 자료형입니다. 리스트 선언, 인덱싱, 슬라이싱, 연산, 메서드, 반복문, 리스트 컴프리헨션, 중첩 리스트 등 리스트와 관련된 다양한 주제를 숙지함으로써 더욱 효율적이고 강력한 파이썬 프로그래밍을 할 수 있습니다. 리스트의 다양한 기능을 충분히 활용하여 데이터 처리를 더욱 효과적으로 수행해 보세요.
