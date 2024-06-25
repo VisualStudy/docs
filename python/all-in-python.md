@@ -1616,3 +1616,172 @@ print(matrix[1][1])  # 5 출력
 ## 결론
 
 파이썬의 리스트는 다양한 기능과 유연성을 제공하여 데이터를 저장하고 조작하는 데 매우 유용한 자료형입니다. 리스트 선언, 인덱싱, 슬라이싱, 연산, 메서드, 반복문, 리스트 컴프리헨션, 중첩 리스트 등 리스트와 관련된 다양한 주제를 숙지함으로써 더욱 효율적이고 강력한 파이썬 프로그래밍을 할 수 있습니다. 리스트의 다양한 기능을 충분히 활용하여 데이터 처리를 더욱 효과적으로 수행해 보세요.
+
+# 파이썬의 튜플: 기초부터 심화까지
+
+파이썬의 튜플(Tuple)은 리스트와 유사하지만, 변경할 수 없는(immutable) 자료형입니다. 튜플은 데이터를 순차적으로 저장하며, 한 번 생성되면 그 값을 변경할 수 없습니다. 이번 글에서는 파이썬의 튜플에 대해 기초부터 심화까지 자세히 설명하겠습니다.
+
+## 1. 튜플 선언과 사용
+
+튜플은 소괄호(`()`)를 사용하여 선언하며, 쉼표로 구분된 여러 요소를 포함할 수 있습니다.
+
+```python
+# 빈 튜플 선언
+empty_tuple = ()
+
+# 여러 요소를 가진 튜플 선언
+numbers = (1, 2, 3, 4, 5)
+fruits = ("apple", "banana", "cherry")
+
+print(numbers)  # (1, 2, 3, 4, 5) 출력
+print(fruits)  # ('apple', 'banana', 'cherry') 출력
+```
+
+하나의 요소를 가진 튜플을 선언할 때는 쉼표를 사용해야 합니다.
+
+```python
+single_element_tuple = (1,)
+print(single_element_tuple)  # (1,) 출력
+```
+
+튜플은 다양한 자료형을 혼합하여 가질 수 있습니다.
+
+```python
+mixed_tuple = (1, "apple", 3.14, True)
+print(mixed_tuple)  # (1, 'apple', 3.14, True) 출력
+```
+
+## 2. 튜플 인덱싱과 슬라이싱
+
+### 2.1 인덱싱
+
+튜플의 각 요소에 접근하기 위해 인덱싱을 사용할 수 있습니다. 인덱스는 0부터 시작합니다.
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+print(fruits[0])  # 'apple' 출력
+print(fruits[2])  # 'cherry' 출력
+print(fruits[-1])  # 'cherry' 출력 (음수 인덱스는 뒤에서부터 접근)
+```
+
+### 2.2 슬라이싱
+
+슬라이싱은 튜플의 부분 튜플(subtuple)을 추출하는 데 사용됩니다.
+
+```python
+numbers = (1, 2, 3, 4, 5)
+
+print(numbers[1:4])  # (2, 3, 4) 출력 (1번 인덱스부터 3번 인덱스까지)
+print(numbers[:3])  # (1, 2, 3) 출력 (시작 인덱스를 생략하면 0부터 시작)
+print(numbers[2:])  # (3, 4, 5) 출력 (끝 인덱스를 생략하면 튜플 끝까지)
+print(numbers[::2])  # (1, 3, 5) 출력 (2칸씩 건너뛰며 추출)
+```
+
+## 3. 튜플 연산
+
+### 3.1 튜플 연결 (Concatenation)
+
+튜플을 덧셈 연산자로 연결할 수 있습니다.
+
+```python
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+combined_tuple = tuple1 + tuple2
+print(combined_tuple)  # (1, 2, 3, 4, 5, 6) 출력
+```
+
+### 3.2 튜플 반복 (Repetition)
+
+튜플을 곱셈 연산자로 반복할 수 있습니다.
+
+```python
+numbers = (1, 2, 3)
+repeated_tuple = numbers * 3
+print(repeated_tuple)  # (1, 2, 3, 1, 2, 3, 1, 2, 3) 출력
+```
+
+## 4. 튜플 메서드
+
+튜플은 변경할 수 없기 때문에 리스트에 비해 사용할 수 있는 메서드가 적습니다. 그러나 튜플에도 몇 가지 유용한 메서드가 있습니다.
+
+### 4.1 `count()` 메서드
+
+`count()` 메서드는 튜플에서 특정 값의 개수를 셉니다.
+
+```python
+numbers = (1, 2, 3, 2, 2, 4, 5)
+count_of_twos = numbers.count(2)
+print(count_of_twos)  # 3 출력
+```
+
+### 4.2 `index()` 메서드
+
+`index()` 메서드는 튜플에서 특정 값의 첫 번째 인덱스를 반환합니다.
+
+```python
+fruits = ("apple", "banana", "cherry")
+index_of_banana = fruits.index("banana")
+print(index_of_banana)  # 1 출력
+```
+
+## 5. 튜플과 반복문
+
+튜플은 반복문과 함께 자주 사용됩니다. `for` 문을 사용하여 튜플의 각 요소에 접근할 수 있습니다.
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+for fruit in fruits:
+    print(fruit)
+# apple 출력
+# banana 출력
+# cherry 출력
+```
+
+## 6. 튜플의 패킹과 언패킹
+
+### 6.1 튜플 패킹
+
+여러 값을 하나의 튜플로 묶는 것을 튜플 패킹(packing)이라고 합니다.
+
+```python
+packed_tuple = 1, "apple", 3.14
+print(packed_tuple)  # (1, 'apple', 3.14) 출력
+```
+
+### 6.2 튜플 언패킹
+
+튜플의 요소를 각각의 변수에 할당하는 것을 튜플 언패킹(unpacking)이라고 합니다.
+
+```python
+numbers = (1, 2, 3)
+a, b, c = numbers
+
+print(a)  # 1 출력
+print(b)  # 2 출력
+print(c)  # 3 출력
+```
+
+여러 개의 변수에 한꺼번에 값을 할당할 때 유용합니다.
+
+## 7. 튜플과 불변성
+
+튜플의 가장 큰 특징은 불변성(immutability)입니다. 한 번 생성된 튜플은 그 값을 변경할 수 없습니다. 이는 튜플을 사용할 때 의도치 않은 변경을 방지할 수 있어 데이터의 무결성을 유지하는 데 도움이 됩니다.
+
+```python
+numbers = (1, 2, 3)
+# numbers[0] = 10  # 오류 발생: TypeError: 'tuple' object does not support item assignment
+```
+
+튜플을 수정해야 할 경우, 새로운 튜플을 생성해야 합니다.
+
+```python
+numbers = (1, 2, 3)
+new_numbers = (10,) + numbers[1:]
+print(new_numbers)  # (10, 2, 3) 출력
+```
+
+## 결론
+
+파이썬의 튜플은 변경할 수 없는 성질을 가지며, 데이터를 순차적으로 저장하는 데 매우 유용한 자료형입니다. 튜플 선언, 인덱싱, 슬라이싱, 연산, 메서드, 반복문, 패킹과 언패킹, 불변성 등 튜플과 관련된 다양한 주제를 숙지함으로써 더욱 효율적이고 안전한 파이썬 프로그래밍을 할 수 있습니다. 튜플의 다양한 기능을 충분히 활용하여 데이터를 처리하고 보호해 보세요.
