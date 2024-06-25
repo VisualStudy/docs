@@ -1277,3 +1277,144 @@ print(decoded_string)  # 'Hello, World!' 출력
 ## 결론
 
 파이썬의 문자열은 다양한 기능과 유연성을 제공하여 텍스트 데이터를 쉽게 처리하고 조작할 수 있게 합니다. 문자열 선언, 인덱싱, 슬라이싱, 연산, 메서드, 포맷팅, 이스케이프 시퀀스, 인코딩 등 문자열과 관련된 다양한 주제를 숙지함으로써 더욱 강력하고 효율적인 파이썬 프로그래밍을 할 수 있습니다.
+
+# 파이썬의 불리언 자료형: 이해와 활용
+
+파이썬의 불리언(Boolean) 자료형은 참(True)과 거짓(False)이라는 두 가지 값만을 가질 수 있는 간단하면서도 강력한 자료형입니다. 불리언 자료형은 조건문, 반복문, 논리 연산 등에서 핵심적인 역할을 합니다. 이번 글에서는 파이썬의 불리언 자료형에 대해 자세히 설명하겠습니다.
+
+## 1. 불리언 값
+
+파이썬에서 불리언 값은 `True`와 `False`입니다. 이 값들은 `bool` 자료형에 속합니다.
+
+```python
+a = True
+b = False
+
+print(type(a))  # <class 'bool'> 출력
+print(type(b))  # <class 'bool'> 출력
+```
+
+## 2. 불리언 연산
+
+불리언 자료형은 주로 논리 연산에서 사용됩니다. 논리 연산자는 `and`, `or`, `not`이 있습니다.
+
+### 2.1 `and` 연산자
+
+`and` 연산자는 두 조건이 모두 참일 때 참을 반환합니다.
+
+```python
+x = True
+y = False
+
+print(x and y)  # False 출력
+print(x and True)  # True 출력
+print(y and False)  # False 출력
+```
+
+### 2.2 `or` 연산자
+
+`or` 연산자는 두 조건 중 하나라도 참이면 참을 반환합니다.
+
+```python
+x = True
+y = False
+
+print(x or y)  # True 출력
+print(x or False)  # True 출력
+print(y or False)  # False 출력
+```
+
+### 2.3 `not` 연산자
+
+`not` 연산자는 조건의 참과 거짓을 반전시킵니다.
+
+```python
+x = True
+y = False
+
+print(not x)  # False 출력
+print(not y)  # True 출력
+```
+
+## 3. 비교 연산자와 불리언
+
+비교 연산자는 두 값을 비교하여 불리언 값을 반환합니다. 주요 비교 연산자는 다음과 같습니다:
+
+- `==`: 두 값이 같으면 참
+- `!=`: 두 값이 다르면 참
+- `<`: 왼쪽 값이 작으면 참
+- `<=`: 왼쪽 값이 작거나 같으면 참
+- `>`: 왼쪽 값이 크면 참
+- `>=`: 왼쪽 값이 크거나 같으면 참
+
+```python
+a = 10
+b = 20
+
+print(a == b)  # False 출력
+print(a != b)  # True 출력
+print(a < b)  # True 출력
+print(a <= b)  # True 출력
+print(a > b)  # False 출력
+print(a >= b)  # False 출력
+```
+
+## 4. 조건문과 불리언
+
+불리언 값은 조건문에서 주로 사용됩니다. `if`, `elif`, `else` 문을 사용하여 조건에 따라 다른 코드를 실행할 수 있습니다.
+
+```python
+a = 10
+b = 20
+
+if a < b:
+    print("a는 b보다 작다")
+elif a == b:
+    print("a는 b와 같다")
+else:
+    print("a는 b보다 크다")
+```
+
+## 5. 반복문과 불리언
+
+불리언 값은 반복문에서도 사용됩니다. `while` 문은 조건이 참인 동안 코드를 반복 실행합니다.
+
+```python
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1
+```
+
+## 6. 불리언으로 평가되는 값
+
+파이썬에서는 특정 값들이 불리언 문맥에서 참 또는 거짓으로 평가됩니다. 예를 들어, 숫자 0, 빈 문자열, 빈 리스트, 빈 딕셔너리 등은 거짓으로 평가되고, 그 외의 값은 참으로 평가됩니다.
+
+```python
+print(bool(0))  # False 출력
+print(bool(""))  # False 출력
+print(bool([]))  # False 출력
+print(bool({}))  # False 출력
+
+print(bool(1))  # True 출력
+print(bool("Hello"))  # True 출력
+print(bool([1, 2, 3]))  # True 출력
+print(bool({"key": "value"}))  # True 출력
+```
+
+## 7. `bool()` 함수
+
+`bool()` 함수는 값을 불리언 값으로 변환합니다. 이 함수는 불리언 문맥에서의 평가 규칙을 따릅니다.
+
+```python
+a = 0
+b = "Hello"
+
+print(bool(a))  # False 출력
+print(bool(b))  # True 출력
+```
+
+## 결론
+
+파이썬의 불리언 자료형은 프로그래밍에서 논리적 흐름을 제어하는 데 필수적인 역할을 합니다. 불리언 값, 논리 연산자, 비교 연산자, 조건문, 반복문 등 다양한 상황에서 불리언 자료형을 효과적으로 사용할 수 있습니다. 불리언 자료형에 대한 이해를 통해 더욱 효율적이고 논리적인 파이썬 코드를 작성해 보세요.
