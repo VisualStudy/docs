@@ -107,3 +107,301 @@ ellipse(x+30, ny-26, 4, 4);                   // 장식 점 2
 ellipse(x+41, ny+6, 3, 3);                    // 장식 점 3
 ```
 
+## 네 가지 모양의 로봇
+
+### 첫 번째 모양
+
+```java
+int x = 60; 
+int y = 390; 
+int bodyHeight = 180; 
+int neckHeight = 40; 
+int radius = 45;
+int ny = y - bodyHeight - neckHeight - radius; 
+
+size(170, 480);
+strokeWeight(2);
+background(0, 153, 204);
+ellipseMode(RADIUS);
+
+// Neck
+stroke(255);
+line(x+2, y-bodyHeight, x+2, ny);
+line(x+12, y-bodyHeight, x+12, ny);
+line(x+22, y-bodyHeight, x+22, ny);
+
+// Antennae
+line(x+12, ny, x-18, ny-43);
+line(x+12, ny, x+42, ny-99);
+line(x+12, ny, x+78, ny+15);
+
+// Body
+noStroke();
+fill(255, 204, 0);
+ellipse(x, y-33, 33, 33);
+fill(0);
+rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+fill(255, 204, 0);
+rect(x-45, y-bodyHeight+17, 90, 6);
+
+// Head
+fill(0);
+ellipse(x+12, ny, radius, radius);
+fill(255);
+ellipse(x+24, ny-6, 14, 14);
+fill(0);
+ellipse(x+24, ny-6, 3, 3);
+fill(153, 204, 255);
+ellipse(x, ny-8, 5, 5);
+ellipse(x+30, ny-26, 4, 4);
+ellipse(x+41, ny+6, 3, 3);
+```
+
+#### 변경 내용
+
+```java
+y = 390
+bodyHeight = 180
+neckHeight = 40
+```
+
+![로봇의 첫 번째 모양](images/robot-first.png)
+
+### 두 번째 모양
+
+```java
+int x = 60; 
+int y = 460; 
+int bodyHeight = 260; 
+int neckHeight = 95; 
+int radius = 45;
+int ny = y - bodyHeight - neckHeight - radius; 
+
+size(170, 480);
+strokeWeight(2);
+background(0, 153, 204);
+ellipseMode(RADIUS);
+
+// Neck
+stroke(255);
+line(x+2, y-bodyHeight, x+2, ny);
+line(x+12, y-bodyHeight, x+12, ny);
+line(x+22, y-bodyHeight, x+22, ny);
+
+// Antennae
+line(x+12, ny, x-18, ny-43);
+line(x+12, ny, x+42, ny-99);
+line(x+12, ny, x+78, ny+15);
+
+// Body
+noStroke();
+fill(255, 204, 0);
+ellipse(x, y-33, 33, 33);
+fill(0);
+rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+fill(255, 204, 0);
+rect(x-45, y-bodyHeight+17, 90, 6);
+
+// Head
+fill(0);
+ellipse(x+12, ny, radius, radius);
+fill(255);
+ellipse(x+24, ny-6, 14, 14);
+fill(0);
+ellipse(x+24, ny-6, 3, 3);
+fill(153, 204, 255);
+ellipse(x, ny-8, 5, 5);
+ellipse(x+30, ny-26, 4, 4);
+ellipse(x+41, ny+6, 3, 3);
+```
+
+#### 변경 내용
+
+```java
+y = 460
+bodyHeight = 260
+neckHeight = 95
+```
+
+![로봇의 두 번째 모양](images/robot-second.png)
+
+### 세 번째 모양
+```java
+int x = 60; 
+int y = 310; 
+int bodyHeight = 80; 
+int neckHeight = 10; 
+int radius = 45;
+int ny = y - bodyHeight - neckHeight - radius; 
+
+size(170, 480);
+strokeWeight(2);
+background(0, 153, 204);
+ellipseMode(RADIUS);
+
+// Neck
+stroke(255);
+line(x+2, y-bodyHeight, x+2, ny);
+line(x+12, y-bodyHeight, x+12, ny);
+line(x+22, y-bodyHeight, x+22, ny);
+
+// Antennae
+line(x+12, ny, x-18, ny-43);
+line(x+12, ny, x+42, ny-99);
+line(x+12, ny, x+78, ny+15);
+
+// Body
+noStroke();
+fill(255, 204, 0);
+ellipse(x, y-33, 33, 33);
+fill(0);
+rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+fill(255, 204, 0);
+rect(x-45, y-bodyHeight+17, 90, 6);
+
+// Head
+fill(0);
+ellipse(x+12, ny, radius, radius);
+fill(255);
+ellipse(x+24, ny-6, 14, 14);
+fill(0);
+ellipse(x+24, ny-6, 3, 3);
+fill(153, 204, 255);
+ellipse(x, ny-8, 5, 5);
+ellipse(x+30, ny-26, 4, 4);
+ellipse(x+41, ny+6, 3, 3);
+```
+
+#### 변경 내용
+
+```java
+y = 310
+bodyHeight = 80
+neckHeight = 10
+```
+
+![로봇의 세 번째 모양](images/robot-third.png)
+
+### 네 번째 모양
+
+```java
+int x = 60; 
+int y = 420; 
+int bodyHeight = 110; 
+int neckHeight = 140; 
+int radius = 45;
+int ny = y - bodyHeight - neckHeight - radius; 
+
+size(170, 480);
+strokeWeight(2);
+background(0, 153, 204);
+ellipseMode(RADIUS);
+
+// Neck
+stroke(255);
+line(x+2, y-bodyHeight, x+2, ny);
+line(x+12, y-bodyHeight, x+12, ny);
+line(x+22, y-bodyHeight, x+22, ny);
+
+// Antennae
+line(x+12, ny, x-18, ny-43);
+line(x+12, ny, x+42, ny-99);
+line(x+12, ny, x+78, ny+15);
+
+// Body
+noStroke();
+fill(255, 204, 0);
+ellipse(x, y-33, 33, 33);
+fill(0);
+rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+fill(255, 204, 0);
+rect(x-45, y-bodyHeight+17, 90, 6);
+
+// Head
+fill(0);
+ellipse(x+12, ny, radius, radius);
+fill(255);
+ellipse(x+24, ny-6, 14, 14);
+fill(0);
+ellipse(x+24, ny-6, 3, 3);
+fill(153, 204, 255);
+ellipse(x, ny-8, 5, 5);
+ellipse(x+30, ny-26, 4, 4);
+ellipse(x+41, ny+6, 3, 3);
+```
+
+#### 변경 내용
+
+```java
+y = 420
+bodyHeight = 110
+neckHeight = 140
+```
+
+![로봇의 네 번째 모양](images/robot-fourth.png)
+
+
+## 여러 모양의 로봇을 함수로 관리하기
+
+```java
+void setup() {
+  size(170, 480);
+  strokeWeight(2);
+  background(0, 153, 204);
+  ellipseMode(RADIUS);
+
+  drawRobot(60, 390, 180, 40);
+  // drawRobot(60, 460, 260, 95);
+  // drawRobot(60, 310, 80, 10);
+  // drawRobot(60, 420, 110, 140);
+}
+
+void drawRobot(int x, int y, int bodyHeight, int neckHeight) {
+  int radius = 45;
+  int ny = y - bodyHeight - neckHeight - radius;
+
+  stroke(255);
+  line(x+2, y-bodyHeight, x+2, ny);
+  line(x+12, y-bodyHeight, x+12, ny);
+  line(x+22, y-bodyHeight, x+22, ny);
+
+  line(x+12, ny, x-18, ny-43);
+  line(x+12, ny, x+42, ny-99);
+  line(x+12, ny, x+78, ny+15);
+
+  noStroke();
+  fill(255, 204, 0);
+  ellipse(x, y-33, 33, 33);
+  fill(0);
+  rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+  fill(255, 204, 0);
+  rect(x-45, y-bodyHeight+17, 90, 6);
+
+  fill(0);
+  ellipse(x+12, ny, radius, radius);
+  fill(255);
+  ellipse(x+24, ny-6, 14, 14);
+  fill(0);
+  ellipse(x+24, ny-6, 3, 3);
+  fill(153, 204, 255);
+  ellipse(x, ny-8, 5, 5);
+  ellipse(x+30, ny-26, 4, 4);
+  ellipse(x+41, ny+6, 3, 3);
+}
+```
+
+### 첫 번째 모양
+
+![함수화 로봇의 첫 번째 모양](images/robot-first-function.png)
+
+### 두 번째 모양
+
+![함수화 로봇의 두 번째 모양](images/robot-second-function.png)
+
+### 세 번째 모양
+
+![함수화 로봇의 세 번째 모양](images/robot-third-function.png)
+
+### 네 번째 모양
+
+![함수화 로봇의 네 번째 모양](images/robot-fourth-function.png)
